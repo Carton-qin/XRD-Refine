@@ -122,11 +122,18 @@ arch -x86_64 /tmp/xrd_env/bin/python3 scripts/pipeline.py \
 
 ### 阶段四：晶体学闭环自检质量门禁 (Quality Gate)
 
-精修计算完成后，脚本自动执行自检：
-1. **$R_{\mathrm{Bragg}}$ 门禁**: 必须满足 $R_{\mathrm{Bragg}} < 5.0\%$（高水平沸石晶体学文献公认上限）。
-2. **Diff 贴零门禁**: 残差曲线中位数必须 $< 1.0\%$ 峰最大高度（通常绝对中位数在 10 ~ 80 counts 之间，绝无连续数千 count 的下凹或尖峰）。
-3. **电中性与配位门禁**: 阳离子总量必须在合理晶体学容量内（SSZ-13 单胞阳离子 $3.5 \sim 4.6$），阳离子-氧距离合理。
-*若任一门禁触发警告，引擎自动收紧搜索半径并重构峰宽矩阵，确保交付物达到顶刊直接录用标准。*
+精修计算完成后，系统执行严密自检：
+1. **多指标联合判据（严禁单一 $R_{\mathrm{wp}}$ 判定）**:
+   - 必须同步核算与输出：
+     $$R_{\mathrm{wp}} = \sqrt{\frac{\sum w_i (y_{\mathrm{obs},i} - y_{\mathrm{calc},i})^2}{\sum w_i y_{\mathrm{obs},i}^2}} \times 100\%, \quad R_{\mathrm{exp}} = \sqrt{\frac{N - P}{\sum w_i y_{\mathrm{obs},i}^2}} \times 100\%$$
+     $$\text{GOF} = \frac{R_{\mathrm{wp}}}{R_{\mathrm{exp}}}, \quad \chi^2 = \text{GOF}^2$$
+   - 在高岭土/沸石等多相与非晶共存体系中，严防因高背底人为降低 $R_{\mathrm{wp}}$ 的统计假象；以 $\text{GOF} < 2.0 \sim 2.5$ 作为高质量收敛基准。
+2. **物相完整性排查（禁止漏相假收敛）**:
+   - 严查关键残差尖峰（如含钾体系 $2\theta \approx 30.9^\circ, 25.8^\circ$），确保所有主产物晶相（`K2SiO3`、`K2CO3·1.5H2O`、`CsAlSiO4`、`Cs2CO3·3H2O`、`Hydroxysodalite`、`LiOH`）均被标尺覆盖，严禁将已结晶产物误判为 0.00%。
+3. **图面视觉防重叠规范**:
+   - 绘制单图或多合一综合图时，Diff 差值曲线的负向偏移（Offset）必须 $\ge 25\% \times Y_{\mathrm{max}}$，彻底消除差值曲线与实测散点的粘连叠合。
+4. **$R_{\mathrm{Bragg}}$ 与物理门禁**:
+   - 沸石与主相必须满足 $R_{\mathrm{Bragg}} < 5.0\% \sim 15\%$，残差曲线中位数贴零，骨架电中性与阳离子配位距离合理。
 
 ---
 

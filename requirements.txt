@@ -1,0 +1,9 @@
+# XRD Auto-Refine Dependencies
+# Cross-platform compatible (Windows, macOS, Linux)
+numpy>=1.22.0
+scipy>=1.9.0
+pandas>=1.4.0
+openpyxl>=3.0.0
+xlrd>=2.0.1
+diffpy.structure>=3.0.0
+matplotlib>=3.5.0

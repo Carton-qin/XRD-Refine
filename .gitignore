@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Results and logs
+results/
+refinement_results/
+*.log

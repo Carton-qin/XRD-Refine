@@ -1,0 +1,76 @@
+data_Zeolite_A_LTA
+_chemical_name_mineral 'Zeolite A (LTA)'
+_chemical_formula_sum 'Al12 Na12 O48 Si12'
+_cell_length_a 12.2800
+_cell_length_b 12.2800
+_cell_length_c 12.2800
+_cell_angle_alpha 90.0
+_cell_angle_beta 90.0
+_cell_angle_gamma 90.0
+_symmetry_space_group_name_H-M 'P m -3 m'
+_symmetry_Int_Tables_number 221
+loop_
+_symmetry_equiv_pos_as_xyz
+'x, y, z'
+'-x, -y, z'
+'-x, y, -z'
+'x, -y, -z'
+'z, x, y'
+'z, -x, -y'
+'-z, -x, y'
+'-z, x, -y'
+'y, z, x'
+'-y, z, -x'
+'-y, -z, x'
+'y, -z, -x'
+'y, x, -z'
+'-y, -x, -z'
+'y, -x, z'
+'-y, x, z'
+'x, z, -y'
+'-x, -z, -y'
+'-x, z, y'
+'x, -z, y'
+'z, y, -x'
+'z, -y, x'
+'-z, -y, -x'
+'-z, y, x'
+'-x, -y, -z'
+'x, y, -z'
+'x, -y, z'
+'-x, y, z'
+'-z, -x, -y'
+'-z, x, y'
+'z, x, -y'
+'z, -x, y'
+'-y, -z, -x'
+'y, -z, x'
+'y, z, -x'
+'-y, z, x'
+'-y, -x, z'
+'y, x, z'
+'-y, x, -z'
+'y, -x, -z'
+'-x, -z, y'
+'x, z, y'
+'x, -z, -y'
+'-x, z, -y'
+'-z, -y, x'
+'-z, y, -x'
+'z, y, x'
+'z, -y, -x'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_B_iso_or_equiv
+Si Si 0.0000 0.1830 0.3700 0.5 1.0
+Al Al 0.0000 0.1830 0.3700 0.5 1.0
+O1 O 0.0000 0.2240 0.5000 1.0 1.8
+O2 O 0.0000 0.2920 0.2920 1.0 1.8
+O3 O 0.1110 0.1110 0.3440 1.0 1.8
+Na1 Na 0.2080 0.2080 0.2080 0.67 2.5
+Na2 Na 0.0000 0.4600 0.4600 0.33 3.0
